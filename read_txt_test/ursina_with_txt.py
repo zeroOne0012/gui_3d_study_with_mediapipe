@@ -37,7 +37,7 @@ def process_data():
                     small_sphere[i].position = (float(frame[idx])*rate, float(frame[idx+1])*rate, float(frame[idx+2])*rate)
                 if small_sphere[i+21] is not None:
                     # small_sphere[i+21].color = color.yellow
-                    small_sphere[i+21].position = (float(frame[idx+63])*rate, float(frame[idx+64])*rate, float(frame[idx+65])*rate)
+                    small_sphere[i+21].position = (float(frame[idx+63])*rate, float(frame[idx+64])*rate, float(frame[idx+65])*rate*2.0)
 
 
 def run_ursina_app():
@@ -46,7 +46,7 @@ def run_ursina_app():
     for i in range(len(small_sphere)):
         small_sphere[i] = Entity(model='sphere', color=color.red, scale=0.5)
     
-    main_floor = Entity(model='cube', position=(0,-30,0), scale=(45,1,50), color=color.gray, collider='box')
+    main_floor = Entity(model='cube', position=(0,-30,0), scale=(45,1,50), color=color.blue, collider='box')
     player = FirstPersonController()
     player.cursor.visible = False
     player.gravity = 0.5
